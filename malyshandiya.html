@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Малышандия — детский сад гармоничного развития, Тюмень</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --milk:#FFF9F0;
+  --card:#FFFFFF;
+  --warm:#FFF1DF;
+  --coral:#FF6B5C;
+  --sun:#FFC247;
+  --mint:#2FB89B;
+  --indigo:#5360E0;
+  --ink:#2C2433;
+  --ink-soft:#6B6270;
+  --line:#EDE3D6;
+  --r:28px;
+  --r-lg:44px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Manrope',system-ui,sans-serif;
+  background:var(--milk);
+  color:var(--ink);
+  font-size:18px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+h1,h2,h3,.display{font-family:'Unbounded',sans-serif;line-height:1.05;letter-spacing:-.01em}
+a{color:inherit}
+
+/* ---------- shapes ---------- */
+.shape{position:absolute;pointer-events:none;z-index:0}
+.sq{border-radius:14px}
+.ci{border-radius:50%}
+.tr{width:0;height:0;background:none!important}
+
+/* ---------- nav ---------- */
+header{position:sticky;top:0;z-index:50;background:rgba(255,249,240,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{font-family:'Unbounded';font-weight:800;font-size:23px;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+.logo .dot{display:inline-flex;gap:4px}
+.logo .dot i{width:11px;height:11px;display:block}
+.logo .dot i:nth-child(1){background:var(--coral);border-radius:3px}
+.logo .dot i:nth-child(2){background:var(--sun);border-radius:50%}
+.logo .dot i:nth-child(3){width:0;height:0;background:none;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:11px solid var(--mint)}
+.nav-cta{font-family:'Unbounded';font-weight:600;font-size:15px;background:var(--ink);color:#fff;padding:13px 22px;border-radius:100px;text-decoration:none;white-space:nowrap;transition:transform .2s}
+.nav-cta:hover{transform:translateY(-2px)}
+.nav-links{display:flex;gap:30px;font-weight:600;font-size:15px}
+.nav-links a{text-decoration:none;color:var(--ink-soft);transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+@media(max-width:880px){.nav-links{display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:90px 0 80px;text-align:center}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;background:var(--warm);border:1px solid var(--line);padding:9px 18px;border-radius:100px;font-weight:700;font-size:14px;letter-spacing:.02em;color:var(--ink);margin-bottom:30px;position:relative;z-index:2}
+.eyebrow b{color:var(--coral)}
+.hero h1{font-size:clamp(48px,9vw,108px);font-weight:800;position:relative;z-index:2}
+.hero h1 .em{color:var(--coral)}
+.hero p.lead{font-size:clamp(18px,2.4vw,23px);color:var(--ink-soft);max-width:640px;margin:26px auto 0;position:relative;z-index:2;line-height:1.5}
+.hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:40px;position:relative;z-index:2}
+.btn{font-family:'Unbounded';font-weight:600;font-size:16px;text-decoration:none;padding:18px 30px;border-radius:100px;transition:transform .2s,box-shadow .2s;display:inline-flex;align-items:center;gap:10px}
+.btn-primary{background:var(--coral);color:#fff;box-shadow:0 12px 30px -10px rgba(255,107,92,.7)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 36px -12px rgba(255,107,92,.8)}
+.btn-ghost{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.btn-ghost:hover{transform:translateY(-3px)}
+.hero-meta{display:flex;gap:36px;justify-content:center;flex-wrap:wrap;margin-top:54px;position:relative;z-index:2}
+.hero-meta .m{text-align:center}
+.hero-meta .m b{font-family:'Unbounded';font-weight:700;font-size:34px;display:block;line-height:1}
+.hero-meta .m span{font-size:14px;color:var(--ink-soft);font-weight:600;margin-top:7px;display:block}
+.hero-meta .m:nth-child(1) b{color:var(--indigo)}
+.hero-meta .m:nth-child(2) b{color:var(--mint)}
+.hero-meta .m:nth-child(3) b{color:var(--sun)}
+
+.hero .shape{z-index:1}
+.h-s1{top:60px;left:6%;width:84px;height:84px;background:var(--indigo)}
+.h-s2{top:140px;right:8%;width:64px;height:64px;background:var(--coral)}
+.h-s3{bottom:120px;left:11%;width:0;height:0;border-left:34px solid transparent;border-right:34px solid transparent;border-bottom:58px solid var(--sun)}
+.h-s4{bottom:60px;right:13%;width:70px;height:70px;background:var(--mint)}
+.h-s5{top:280px;left:2%;width:42px;height:42px;background:var(--sun);opacity:.8}
+.h-s6{top:340px;right:3%;width:50px;height:50px;background:var(--indigo);opacity:.85}
+@media(max-width:880px){.h-s1,.h-s5,.h-s6{display:none}.h-s2{width:46px;height:46px}.h-s4{width:50px;height:50px}}
+
+/* ---------- section base ---------- */
+section{position:relative}
+.block{padding:90px 0}
+.sec-head{max-width:680px;margin-bottom:54px}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.tag{font-family:'Unbounded';font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--coral);margin-bottom:16px}
+.sec-head h2{font-size:clamp(32px,5vw,50px);font-weight:700}
+.sec-head p{color:var(--ink-soft);font-size:19px;margin-top:18px}
+
+/* ---------- directions ---------- */
+.dirs{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+@media(max-width:760px){.dirs{grid-template-columns:1fr}}
+.dir{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:38px 36px;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.dir:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(44,36,51,.25)}
+.dir .mark{width:56px;height:56px;margin-bottom:24px;display:flex;align-items:center;justify-content:center}
+.dir h3{font-size:24px;font-weight:700;margin-bottom:16px}
+.dir ul{list-style:none}
+.dir li{display:flex;gap:11px;padding:7px 0;color:var(--ink-soft);font-weight:500;font-size:16.5px;align-items:flex-start;border-bottom:1px solid var(--milk)}
+.dir li:last-child{border-bottom:none}
+.dir li b{color:var(--ink);font-weight:600}
+.dir .chip{position:absolute;top:0;right:0;font-family:'Unbounded';font-weight:700;font-size:13px;padding:8px 16px;border-bottom-left-radius:18px;color:#fff}
+/* per-card accent */
+.dir-1{background:linear-gradient(180deg,#fff,#F4F6FF)}
+.dir-1 .chip{background:var(--indigo)} .dir-1 li::before{content:"";flex:0 0 8px;height:8px;border-radius:2px;background:var(--indigo);margin-top:9px}
+.dir-2{background:linear-gradient(180deg,#fff,#FFF1EF)}
+.dir-2 .chip{background:var(--coral)} .dir-2 li::before{content:"";flex:0 0 8px;height:8px;border-radius:50%;background:var(--coral);margin-top:9px}
+.dir-3{background:linear-gradient(180deg,#fff,#FFF8E8)}
+.dir-3 .chip{background:var(--sun);color:var(--ink)} .dir-3 li::before{content:"";flex:0 0 0;width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:9px solid var(--sun);margin-top:8px}
+.dir-4{background:linear-gradient(180deg,#fff,#EEFAF6)}
+.dir-4 .chip{background:var(--mint)} .dir-4 li::before{content:"";flex:0 0 9px;height:9px;border-radius:9px 9px 0 0;background:var(--mint);margin-top:8px}
+
+/* ---------- day strip ---------- */
+.day{background:var(--ink);color:#fff;border-radius:var(--r-lg);padding:60px 56px;position:relative;overflow:hidden}
+.day .tag{color:var(--sun)}
+.day h2{font-size:clamp(30px,4.5vw,44px);font-weight:700;max-width:560px}
+.day-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:48px;position:relative;z-index:2}
+@media(max-width:760px){.day{padding:44px 28px}.day-grid{grid-template-columns:1fr;gap:22px}}
+.day-item{position:relative;padding-left:0}
+.day-item .ic{width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.day-item h4{font-family:'Unbounded';font-weight:600;font-size:18px;margin-bottom:8px}
+.day-item p{color:#C7BFD0;font-size:15.5px;line-height:1.5}
+.day .shape{opacity:.16}
+.d-s1{top:-30px;right:-20px;width:160px;height:160px;background:var(--mint);border-radius:50%}
+.d-s2{bottom:-40px;right:24%;width:90px;height:90px;background:var(--coral);border-radius:20px;transform:rotate(15deg)}
+
+/* ---------- pricing ---------- */
+.prices{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:760px){.prices{grid-template-columns:1fr}}
+.price{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:42px 40px;position:relative;overflow:hidden}
+.price.feat{background:linear-gradient(165deg,#FF8175,#FF5A4A);color:#fff;border:none}
+.price .ribbon{font-family:'Unbounded';font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.22);display:inline-block;padding:7px 14px;border-radius:100px;margin-bottom:20px}
+.price h3{font-size:22px;font-weight:700;margin-bottom:6px}
+.price .sub{font-size:15px;color:var(--ink-soft);font-weight:600;margin-bottom:24px}
+.price.feat .sub{color:rgba(255,255,255,.85)}
+.price .amount{font-family:'Unbounded';font-weight:800;font-size:46px;line-height:1;letter-spacing:-.02em}
+.price .amount span{font-size:18px;font-weight:600;font-family:'Manrope';color:var(--ink-soft)}
+.price.feat .amount span{color:rgba(255,255,255,.85)}
+.price ul{list-style:none;margin-top:26px}
+.price li{padding:9px 0;display:flex;gap:11px;font-weight:500;font-size:16px;border-top:1px solid var(--line)}
+.price.feat li{border-top:1px solid rgba(255,255,255,.18)}
+.price li svg{flex:0 0 20px;margin-top:3px}
+.price .price-cta{display:inline-flex;margin-top:28px;font-family:'Unbounded';font-weight:600;font-size:15px;text-decoration:none;padding:15px 26px;border-radius:100px}
+.price .price-cta{background:var(--ink);color:#fff}
+.price.feat .price-cta{background:#fff;color:var(--coral)}
+
+/* ---------- extras ---------- */
+.extras{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
+.extras span{background:var(--warm);border:1px solid var(--line);border-radius:100px;padding:11px 20px;font-weight:600;font-size:15.5px}
+
+/* ---------- cta / contact ---------- */
+.contact{background:linear-gradient(165deg,#5E6BEC,#4A57D8);color:#fff;border-radius:var(--r-lg);padding:68px 56px;position:relative;overflow:hidden;text-align:center}
+.contact h2{font-size:clamp(30px,5vw,52px);font-weight:800}
+.contact p{font-size:19px;color:rgba(255,255,255,.88);max-width:520px;margin:20px auto 0}
+.phone{font-family:'Unbounded';font-weight:800;font-size:clamp(30px,6vw,52px);letter-spacing:-.01em;text-decoration:none;color:#fff;display:inline-block;margin:34px 0 6px;transition:transform .2s}
+.phone:hover{transform:scale(1.03)}
+.addr{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.16);padding:13px 24px;border-radius:100px;font-weight:600;font-size:16px;margin-top:18px}
+.contact .shape{opacity:.18}
+.c-s1{top:-40px;left:-30px;width:180px;height:180px;background:var(--sun);border-radius:50%}
+.c-s2{bottom:-50px;right:8%;width:120px;height:120px;background:var(--coral);border-radius:30px;transform:rotate(20deg)}
+.c-s3{top:30px;right:14%;width:0;height:0;border-left:40px solid transparent;border-right:40px solid transparent;border-bottom:70px solid var(--mint)}
+
+/* ---------- footer ---------- */
+footer{padding:50px 0 60px;text-align:center;color:var(--ink-soft);font-size:15px}
+footer .logo{justify-content:center;margin-bottom:14px;font-size:20px}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  *{animation:none!important}
+}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+.float{animation:float 7s ease-in-out infinite}
+.float.d1{animation-delay:-1.5s}
+.float.d2{animation-delay:-3s}
+.float.d3{animation-delay:-4.5s}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="logo">Малышандия<span class="dot"><i></i><i></i><i></i></span></div>
+      <div class="nav-links">
+        <a href="#dev">Развитие</a>
+        <a href="#day">Как устроен день</a>
+        <a href="#price">Форматы и цены</a>
+        <a href="#contact">Контакты</a>
+      </div>
+      <a href="tel:+79923136161" class="nav-cta">Записаться</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="shape sq h-s1 float"></span>
+  <span class="shape ci h-s2 float d1"></span>
+  <span class="shape h-s3 float d2"></span>
+  <span class="shape ci h-s4 float d3"></span>
+  <span class="shape sq h-s5 float d2"></span>
+  <span class="shape ci h-s6 float d1"></span>
+  <div class="wrap">
+    <span class="eyebrow">Детский сад гармоничного развития · <b>с 1,5 лет</b></span>
+    <h1>Здесь малыши<br>растут <span class="em">играя</span></h1>
+    <p class="lead">Всестороннее развитие в малочисленных группах под присмотром воспитателя и няни. Просторное помещение и отдельные кабинеты для занятий в самом сердце Тюмени.</p>
+    <div class="hero-actions">
+      <a href="tel:+79923136161" class="btn btn-primary">Записаться на экскурсию</a>
+      <a href="#dev" class="btn btn-ghost">Что внутри →</a>
+    </div>
+    <div class="hero-meta">
+      <div class="m"><b>60+</b><span>занятий в месяц</span></div>
+      <div class="m"><b>7:30–19:00</b><span>с дежурной группой</span></div>
+      <div class="m"><b>5</b><span>приёмов пищи в день</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- DEVELOPMENT -->
+<section class="block" id="dev">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <div class="tag">Более 60 занятий в месяц</div>
+      <h2>Четыре направления развития</h2>
+      <p>Каждое со своей фигурой и цветом — как блоки Дьенеша, которыми занимаются дети. Программа собрана из проверенных методик и современных пособий.</p>
+    </div>
+    <div class="dirs">
+
+      <div class="dir dir-1 rv">
+        <span class="chip">Ум</span>
+        <div class="mark"><svg width="48" height="48" viewBox="0 0 48 48"><rect x="6" y="6" width="36" height="36" rx="9" fill="#5360E0"/></svg></div>
+        <h3>Речь, чтение и логика</h3>
+        <ul>
+          <li><b>Развитие речи</b> и чтение по кубикам Зайцева</li>
+          <li><b>Элементарная математика</b> — блоки Дьенеша, палочки Кюизенера</li>
+          <li><b>«Я познаю мир»</b> с элементами ТРИЗ-технологии</li>
+          <li><b>Конструирование</b> — от простого к сложному</li>
+        </ul>
+      </div>
+
+      <div class="dir dir-2 rv">
+        <span class="chip">Руки</span>
+        <div class="mark"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18" fill="#FF6B5C"/></svg></div>
+        <h3>Моторика и сенсорика</h3>
+        <ul>
+          <li><b>Пальчиковые игры</b> и развитие мелкой моторики</li>
+          <li><b>Элементы методики</b> Марии Монтессори</li>
+          <li><b>Сенсорные коробки</b> с разными наполнениями</li>
+          <li>Чувствительные пальцы — основа будущего письма</li>
+        </ul>
+      </div>
+
+      <div class="dir dir-3 rv">
+        <span class="chip">Творчество</span>
+        <div class="mark"><svg width="48" height="48" viewBox="0 0 48 48"><path d="M24 6 L44 40 L4 40 Z" fill="#FFC247"/></svg></div>
+        <h3>Творчество и музыка</h3>
+        <ul>
+          <li><b>Арт-студия</b> — лепка, изо, аппликация</li>
+          <li><b>Музыкальные занятия</b> и развитие слуха</li>
+          <li><b>Утренники и праздники</b> каждый месяц</li>
+          <li>Возможность раскрыться и показать себя</li>
+        </ul>
+      </div>
+
+      <div class="dir dir-4 rv">
+        <span class="chip">Тело и забота</span>
+        <div class="mark"><svg width="48" height="48" viewBox="0 0 48 48"><path d="M6 30 A18 18 0 0 1 42 30 Z" fill="#2FB89B"/></svg></div>
+        <h3>Здоровье и поддержка</h3>
+        <ul>
+          <li><b>Детский фитнес</b> и ЛФК</li>
+          <li><b>Психолог и логопед</b> — индивидуально</li>
+          <li><b>Сказкотерапия</b> и мягкая работа с эмоциями</li>
+          <li><b>Профилактика и закаливание</b> для крепкого здоровья</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DAY -->
+<section class="block" id="day" style="padding-top:0">
+  <div class="wrap">
+    <div class="day rv">
+      <span class="shape d-s1"></span>
+      <span class="shape d-s2"></span>
+      <div class="tag">Как устроен день</div>
+      <h2>Комфортный режим, в котором ребёнку спокойно</h2>
+      <div class="day-grid">
+        <div class="day-item">
+          <div class="ic" style="background:var(--coral)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="9"/></svg></div>
+          <h4>График 7:30–18:00</h4>
+          <p>Дежурная группа до 19:00 и группа неполного дня — режим под ваш ритм.</p>
+        </div>
+        <div class="day-item">
+          <div class="ic" style="background:var(--sun)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2C2433" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16M6 19V9l6-4 6 4v10M9 19v-5h6v5"/></svg></div>
+          <h4>5-разовое питание</h4>
+          <p>Сбалансированное меню — завтрак, обед, полдник и не только, каждый день.</p>
+        </div>
+        <div class="day-item">
+          <div class="ic" style="background:var(--mint)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3 2.7-5 6-5s6 2 6 5M15.5 20c0-2.2 1.3-3.6 3-3.8"/></svg></div>
+          <h4>Малочисленные группы</h4>
+          <p>Всегда под наблюдением воспитателя и няни — внимание достаётся каждому.</p>
+        </div>
+        <div class="day-item">
+          <div class="ic" style="background:var(--indigo)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V9l9-6 9 6v12M9 21v-6h6v6"/></svg></div>
+          <h4>Отдельные кабинеты</h4>
+          <p>Просторное помещение и развивающая среда — для каждого занятия своё пространство.</p>
+        </div>
+        <div class="day-item">
+          <div class="ic" style="background:var(--coral)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9-9a5 5 0 0 1 9-2 5 5 0 0 1 9 2c-2 4.5-9 9-9 9z"/></svg></div>
+          <h4>Мягкая адаптация</h4>
+          <p>Привыкаем к саду постепенно — без слёз и стресса, в комфортном для ребёнка темпе.</p>
+        </div>
+        <div class="day-item">
+          <div class="ic" style="background:var(--sun)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2C2433" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 21l-4.9 2.6.9-5.5-4-3.9 5.5-.8z" transform="scale(.92) translate(1 0)"/></svg></div>
+          <h4>Внимание к здоровью</h4>
+          <p>Профилактика и закаливание — забота о здоровье встроена в каждый день.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="block" id="price" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="tag">Форматы и цены</div>
+      <h2>Выберите удобный формат</h2>
+      <p>Полный день или короткое утро — стоимость указана за месяц, всё включено.</p>
+    </div>
+    <div class="prices">
+
+      <div class="price feat rv">
+        <span class="ribbon">Полный день</span>
+        <h3>Целый день в саду</h3>
+        <div class="sub">7:30–18:00 · дежурная группа до 19:00</div>
+        <div class="amount">26 000 <span>₽ / мес</span></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Все 60+ занятий по программе</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>5-разовое сбалансированное питание</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Дневной сон и полный режим</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Дежурная группа до 19:00</li>
+        </ul>
+        <a href="tel:+79923136161" class="price-cta">Записаться →</a>
+      </div>
+
+      <div class="price rv">
+        <span class="ribbon" style="background:var(--warm);color:var(--ink)">Неполный день</span>
+        <h3>Активное утро</h3>
+        <div class="sub">7:30–12:00 · мини-сад</div>
+        <div class="amount" style="color:var(--indigo)">19 000 <span>₽ / мес</span></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#2FB89B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Развивающие занятия по программе</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#2FB89B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Питание в первой половине дня</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#2FB89B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Формат для мягкого старта</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#2FB89B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>Удобно для младших малышей</li>
+        </ul>
+        <a href="tel:+79923136161" class="price-cta">Записаться →</a>
+      </div>
+
+    </div>
+
+    <div class="sec-head rv" style="margin-top:64px;margin-bottom:0">
+      <div class="tag">Дополнительно</div>
+      <h2 style="font-size:clamp(26px,4vw,38px)">Можно добавить к любому формату</h2>
+      <div class="extras">
+        <span>Раннее развитие</span>
+        <span>Уроки творчества</span>
+        <span>Логопед — индивидуально</span>
+        <span>Психолог — индивидуально</span>
+        <span>Сказкотерапия</span>
+        <span>ЛФК</span>
+        <span>Мини-сад</span>
+        <span>Группа неполного дня</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="block" id="contact" style="padding-top:0">
+  <div class="wrap">
+    <div class="contact rv">
+      <span class="shape c-s1"></span>
+      <span class="shape c-s2"></span>
+      <span class="shape c-s3"></span>
+      <div style="position:relative;z-index:2">
+        <h2>Приходите на личную экскурсию</h2>
+        <p>Покажем группы и кабинеты, расскажем о программе и поможем выбрать формат. Запись по телефону:</p>
+        <a href="tel:+79923136161" class="phone">+7 992 313-61-61</a>
+        <div><span class="addr">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          г. Тюмень, ул. Е. Богдановича, 10
+        </span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="logo">Малышандия<span class="dot"><i></i><i></i><i></i></span></div>
+    Детский сад гармоничного развития для детей от 1,5 лет · Тюмень
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver((es)=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
